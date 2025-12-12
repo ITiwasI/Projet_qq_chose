@@ -5,3 +5,6 @@ Notes projet
 Bibliothèque de jeux
 Le pc n'est qu'un écran
 Des boutons pour interagir (haut bas gauche droite, au moins 2actions)
+
+je change des trucs
+pas tout exploser

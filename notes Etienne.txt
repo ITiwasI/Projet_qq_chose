@@ -1,0 +1,16 @@
+Mon style d'ecriture :
+├ tous les fichiers, classes en minuscule
+├ variables des classes : _nomCompose
+├ variabes de fonctions : (libre)
+└ fonctions de classes : nomCompose()
+
+Application : classe principale du programme
+├ elle contient des objets pour les boutons, joystick eventuellement
+├ init():
+│  ├ met les var internes a 0
+│  └ attache les composants a leur pin
+└ run() :
+   ├ pour la selection de jeu
+   ├ des qu'un jeu est selec, init le jeu (fait passer les compo en argument), run bloquant
+   └ affiche serial les infos, a recup sur l'ordi
+	

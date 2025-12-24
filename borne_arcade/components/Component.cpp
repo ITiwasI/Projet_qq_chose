@@ -1,7 +1,7 @@
 #include "component.h"
 
-Component::Component() {
+component::component() {
 }
   
-Component::~Component() {
+component::~component() {
 }

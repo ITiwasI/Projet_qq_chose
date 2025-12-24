@@ -1,13 +1,12 @@
 #ifndef COMPONENT_H_
 #define COMPONENT_H_
 
-class Component
+class component
 {
   public :
-    Component();
-    ~Component();    
-    
-	virtual void init(void)=0;
+    component();
+    virtual ~component();    
+	  virtual void init(void)=0;
 };
 
-#endif
+#endif // COMPONENT_H_

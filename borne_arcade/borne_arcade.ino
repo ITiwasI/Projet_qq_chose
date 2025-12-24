@@ -1,6 +1,6 @@
-#include "Application.h"
+#include "application.h"
 
-Application myApplication;
+application myApplication;
 
 void setup() 
 {

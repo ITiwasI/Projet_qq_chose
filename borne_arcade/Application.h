@@ -1,8 +1,8 @@
 #ifndef APPLICATION_H_
 #define APPLICATION_H_
 
-#include "games\game.h"
-#include "components\component.h"
+#include "components/joystick/joystick.h"
+
 
 class application
 {
@@ -12,5 +12,8 @@ class application
 
     void init(void);
     void run(void);
+
+    joystick js;
 };
-#endif
+#endif // APPLICATION_H_
+

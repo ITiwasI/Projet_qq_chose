@@ -1,11 +1,14 @@
 #ifndef APPLICATION_H_
 #define APPLICATION_H_
 
-class Application
+#include "games\game.h"
+#include "components\component.h"
+
+class application
 {
   public :
-    Application();
-    ~Application();    
+    application();
+    ~application();    
 
     void init(void);
     void run(void);

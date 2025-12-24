@@ -1,17 +1,14 @@
-#include "Application.h"
-#include "games\Game.h"
-#include "component\Component.h"
+#include "application.h"
 
-Application::Application(){
+application::application(){
 }
   
-Application::~Application() {
+application::~application() {
 }  
 
-void Application::init(void) {
+void application::init(void) {
 
 }
 
-void Application::run(void) {
-
+void application::run(void) {
 }

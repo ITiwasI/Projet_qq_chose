@@ -1,13 +1,13 @@
-#ifndef PAWN_H_
-#define PAWN_H_
+#ifndef QUEEN_H_
+#define QUEEN_H_
 
 #include "Arduino.h"
 #include "piece.h"
 
-class pawn : public piece {
+class queen : public piece {
   public :
-    pawn(bool wh, uint8_t px, uint8_t py);
-    ~pawn();
+    queen(bool wh, uint8_t px, uint8_t py);
+    ~queen();
 
     // Is move legal w/ regards to pieces
     bool canMoveTo(uint8_t nx, uint8_t ny);

@@ -17,11 +17,52 @@ application : classe principale du programme
 J'utilise des fonctions privees pour simplifier le run()
 
 26/12 : Structure des .h et .cpp : 
-└  3 options
-   ├ Tout mettre dans le meme dossier (bof)
-   ├ Creer une bibliotheque externe (libraries) donc include <> (bof)
-   └ Exploiter le linker Arduino en mettant les fichiers second. dans le src/ donc include "" (yes)
-     └ Permet d'avoir une hierarchie de fichiers, mais pas trop (pas possible de faire un dossier
-       dedie aux jeux, un aux compo car les jeux doivent appeler les compo (ceux en plus des 3 boutons)
-       Donc jeux+compos dans le dossier, tout le reste qui peut etre hierarchise peut etre dans un
-       dossier a part.
+├─ 3 options
+│  ├─ Tout mettre dans le meme dossier (bof)
+│  ├─ Creer une bibliotheque externe (libraries) donc include <> (bof)
+│  └─ Exploiter le linker Arduino en mettant les fichiers second. dans le src/ donc include "" (yes)
+│     └─ Permet d'avoir une hierarchie de fichiers, mais pas trop (pas possible de faire un dossier
+│       dedie aux jeux, un aux compo car les jeux doivent appeler les compo (ceux en plus des 3 boutons)
+│       Donc jeux+compos dans le dossier, tout le reste qui peut etre hierarchise peut etre dans un
+│       dossier a part.
+│
+├─ testJeu :
+│  └─ Implementation du jeu partie par partie (selection du jeu, lancement du jeu, import par
+│    reference des boutons deja crees, creation de la table, classes pour les pieces du jeu, etc)
+│
+├─ tableau d'echecs :
+│  ├─ implemente dans le testGame
+│  │  ├─ tableau de 8x8 cases qui peuvent etre (vide|pion|roi|dame|fou|chevalier|tour)
+│  │  │  Mais : classes limitees car aucune interac possibles au niveau de la classe
+│  │  │  donc en gros des classes avec des noms mais vides
+│  │  │  Et en plus il faut redefinir sans arret les cases (pb de memoire dynamique)
+│  │  │
+│  │  ├─ tableau de toutes les pieces (polymorphysme) sans vide, position stockee dans la piece,
+│  │  │  ├─ fonction deplacement_possibles (afficher ce qui est possible a l'utilisateur)
+│  │  │  │  re-definissable pour toutes les pieces (virtual)
+│  │  │  │  Maximum 27 donc 27*6/8=20 octets pour tout stocker au plus compak bof, autant appeler
+│  │  │  │  la fct suivante 63 fois
+│  │  │  ├─ fonction deplacement_valide (tester le deplacement voulu par utilisateur)
+│  │  │  ├─ Changement du plateau depuis le jeu, appel d'un setter, et destruction des pieces mangees
+│  │  │  ├─ On peut utiliser comme dans un td une liste propre a la classe piece
+│  │  │  │  
+
+* Code pour determiner si sur meme diagonale
+
+import numpy as np
+
+list_d1 = np.zeros((8,8))
+list_d2 = np.zeros((8,8))
+
+for y in range(8):
+    for x in range(8):
+        list_d1[7-y][x] = x+y
+        list_d2[7-y][x] = 7+x-y
+
+for y in range(8):
+    for i in list_d1[y]:
+        print(int(i), end="\t")
+    print("\t\t\t", end="")
+    for i in list_d2[y]:
+        print(int(i), end="\t")
+    print()

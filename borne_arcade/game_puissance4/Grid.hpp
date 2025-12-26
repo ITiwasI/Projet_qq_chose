@@ -16,7 +16,7 @@ class Grid {
         void DisplayGrid();
         void AddPiece(char Player, int C);
         bool isGridFull();
-        //reste à creer methode il y a un gagnant
+        char isWinner();
 };
 
 #endif

@@ -29,7 +29,7 @@ void setup() {
 void loop() {
   Grid grid4;
 
-  while (grid4.isGridFull() != 1)   // rajouter "et il n'y a pas de gagnant"
+  while ((grid4.isGridFull() != 1) and (grid4.isWinner() == '/')) 
   {
     lcd.setCursor(0, 0);
     lcd.print("JoueurAct: ");
@@ -67,8 +67,27 @@ void loop() {
     {CurrentPlayer = 'A';}
   }
 
+  lcd.clear();
+
+  if (grid4.isWinner() == 'X'){
+    lcd.setCursor(0, 0);
+    lcd.print("Joueur A a gagne");
+    lcd.setCursor(0, 1);
+    lcd.print("Bravo !");
+  }
+
+  if (grid4.isWinner() == 'O'){
+    lcd.setCursor(0, 0);
+    lcd.print("Joueur B a gagne");
+    lcd.setCursor(0, 1);
+    lcd.print("Bravo !");
+  }
   
+   if (grid4.isGridFull() == 1){
+    lcd.setCursor(0, 0);
+    lcd.print("Match nul");
+  }
 
+  delay(10000);
+  exit(0);
 }
-
-

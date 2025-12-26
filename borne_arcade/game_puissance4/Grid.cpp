@@ -75,4 +75,53 @@ bool Grid::isGridFull()
 }
 
 
+char Grid::isWinner() // retourne X si A gagne, O si B gagne, / si pas de gagnant
+{
+    for (int i=0; i<6; i++) // on parcourt sur les lignes
+    {
+        for (int j=0; j<7; j++) // on parcourt sur les colonnes
+        {
+            char CurrentPiece = (grid[i] -> elements[j]);
+            
+            if (CurrentPiece == '-')
+            {
+                continue;
+            }
 
+            if (j+3 < 7) // Verifications horizontales
+            {
+                if ((CurrentPiece == (grid[i] -> elements[j+1])) && (CurrentPiece == (grid[i] -> elements[j+2])) && (CurrentPiece == (grid[i] -> elements[j+3])))
+                {
+                    return CurrentPiece;
+                }
+            }
+            
+            if (i+3 < 6) // Verifications verticales
+            {
+                if ((CurrentPiece == (grid[i+1] -> elements[j])) && (CurrentPiece == (grid[i+2] -> elements[j])) && (CurrentPiece == (grid[i+3] -> elements[j])))
+                {
+                    return CurrentPiece;
+                }
+            }
+
+            if ((i+3 < 6) && (j+3 < 7)) // Verifications diagonales descentes bas-droite
+            {
+                if  ((CurrentPiece == (grid[i+1] -> elements[j+1])) && (CurrentPiece == (grid[i+2] -> elements[j+2])) && (CurrentPiece == (grid[i+3] -> elements[j+3])))
+                {
+                    return CurrentPiece;
+                }
+
+            }
+
+            if ((i+3 < 6) && (j-3 >= 0)) // Verifications diagonales montantes bas-gauche
+            {
+                if  ((CurrentPiece == (grid[i+1] -> elements[j-1])) && (CurrentPiece == (grid[i+2] -> elements[j-2])) && (CurrentPiece == (grid[i+3] -> elements[j-3])))
+                {
+                    return CurrentPiece;
+                }
+            }
+
+        }
+    }
+    return '/';  
+}

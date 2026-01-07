@@ -33,7 +33,7 @@ void loop() {
   buttonSelect.init(14);
 
   Grid grid4;
-  grid4.DisplayGrid();
+  grid4.DisplayGrid(); // n'a pas d'effet malheureusement
 
   while ((grid4.isGridFull() != 1) and (grid4.isWinner() == '/')) 
   {
@@ -61,7 +61,7 @@ void loop() {
       }
     }
     
-    delay(500);  // pour que buttonSelect considere 1 seule pression
+    delay(1000);  // pour que buttonSelect considere 1 seule pression
 
     Serial.println(" "); Serial.println(" "); Serial.println(" ");
 
@@ -96,5 +96,4 @@ void loop() {
   }
 
   delay(10000);
-  exit(0);
 }

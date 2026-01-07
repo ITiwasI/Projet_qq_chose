@@ -5,3 +5,4 @@ Component::Component() {
   
 Component::~Component() {
 }
+

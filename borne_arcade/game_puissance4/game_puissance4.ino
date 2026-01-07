@@ -2,15 +2,17 @@
 #include <Wire.h>
 #include "rgb_lcd.h"
 rgb_lcd lcd;      // à connecter à I2C
+// bouton normal sur D3
+// button tactile capacitif sur D5
 
 #include <stdlib.h>
 using namespace std;
 
 #include "Row.hpp"
 #include "Grid.hpp"
+#include "Component.hpp"
+#include "Button.hpp"
 
-#define buttonNext 0 // bouton normal = D3
-#define buttonSelect 14 // button tactile capacitif = D5
 
 int push = 1;
 char CurrentPlayer = 'A';
@@ -21,13 +23,17 @@ void setup() {
   Serial.println("begin...");
   lcd.begin(16, 2);
 
-  pinMode(0, INPUT);
-  pinMode(14, INPUT);
 }
 
 
 void loop() {
+  Button buttonNext;
+  buttonNext.init(0);
+  Button buttonSelect;
+  buttonSelect.init(14);
+
   Grid grid4;
+  grid4.DisplayGrid();
 
   while ((grid4.isGridFull() != 1) and (grid4.isWinner() == '/')) 
   {
@@ -40,27 +46,28 @@ void loop() {
     lcd.print("ColonneAct: ");
     lcd.print(push);
 
-    while (digitalRead(buttonSelect) == 0)
+    while (buttonSelect.read() == 0)
     {
-      if (digitalRead(buttonNext) == 0) {
-        delay(150);
-        if (digitalRead(buttonNext) == 1) {
-          push += 1;
-          if (push > 7)
-          {
-            push = 1;
-          }
-          lcd.setCursor(0, 1);
-          lcd.print("ColonneAct: ");
-          lcd.print(push);
+      if (buttonNext.isPressed()) 
+      {
+        push += 1;
+        if (push > 7)
+        {
+          push = 1;
         }
+        lcd.setCursor(0, 1);
+        lcd.print("ColonneAct: ");
+        lcd.print(push);
       }
     }
     
-    delay(500);
+    delay(500);  // pour que buttonSelect considere 1 seule pression
+
+    Serial.println(" "); Serial.println(" "); Serial.println(" ");
 
     grid4.AddPiece(CurrentPlayer, push-1);
     grid4.DisplayGrid();
+
     if (CurrentPlayer == 'A')
     {CurrentPlayer = 'B';}
     else

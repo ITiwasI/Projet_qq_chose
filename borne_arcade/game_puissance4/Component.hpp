@@ -6,8 +6,7 @@ class Component
   public :
     Component();
     ~Component();    
-    
-	virtual void init(void);
+  
 };
 
 #endif

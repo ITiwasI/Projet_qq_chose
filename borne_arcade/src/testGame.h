@@ -9,7 +9,7 @@ class testGame : public game {
     testGame();
     ~testGame();
     
-    void init(void);
+    void init(&leftButton, &rightButton);
     void initButton(button *leftB, button *rightB);
     void selectorUpdate(void);
     void run(void);

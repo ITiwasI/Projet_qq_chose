@@ -10,7 +10,7 @@ class knight : public piece {
     ~knight();
 
     // Is move legal w/ regards to pieces
-    bool canMoveTo(uint8_t nx, uint8_t ny);
+    bool canMoveTo(uint8_t nx, uint8_t ny) override;
     
 };
 #endif

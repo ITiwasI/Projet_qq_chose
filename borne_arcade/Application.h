@@ -16,9 +16,8 @@ class application
 
   private :
     // Menu variables
-    uint8_t _selector;
+    int8_t _selector;
     short _lastButtonState;
-    int _pressTime;
 
     button leftButton;
     button rightButton;

@@ -21,7 +21,7 @@ uint8_t piece::getId() {
 }
 
 uint8_t piece::getPos() {
-  // Bijective transform (x,y) <=> (z)
+  // Bijective transform (x,y) <=> (z) : file, rank => 10f+r
   return 10*_posX + _posY;
 }
 void piece::setPos(uint8_t nx, uint8_t ny) {

@@ -7,7 +7,7 @@ class game
     game();
     ~game();    
     
-    virtual void init(void);
+    virtual void init(&leftButton, &rightButton);
     virtual void run(void);
     
   protected :

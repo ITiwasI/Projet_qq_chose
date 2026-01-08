@@ -12,6 +12,7 @@ class piece {
 
     uint8_t getId();
     uint8_t getPos();
+    bool isWhite();
     void setPos(uint8_t nx, uint8_t ny); 
 
   protected :

@@ -24,6 +24,11 @@ uint8_t piece::getPos() {
   // Bijective transform (x,y) <=> (z) : file, rank => 10f+r
   return 10*_posX + _posY;
 }
+
+bool piece::isWhite() {
+  return _white;
+}
+
 void piece::setPos(uint8_t nx, uint8_t ny) {
   if(nx >= 1 && nx <= 8) _posX = nx;
   if(ny >= 1 && ny <= 8) _posY = ny;

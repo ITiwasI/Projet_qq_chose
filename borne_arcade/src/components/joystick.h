@@ -1,7 +1,8 @@
 #ifndef JOYSTICK_H
 #define JOYSTICK_H
 
-#include "../component.h"
+#include "component.h"
+#include <Arduino.h>
 
 #define ANALOG_X_PIN A4
 #define ANALOG_Y_PIN A3 

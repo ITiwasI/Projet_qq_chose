@@ -1,7 +1,7 @@
 #ifndef FOUR_IN_A_RAW_H_
 #define FOUR_IN_A_RAW_H_
-#include "../game.h"
-#include "../../components/joystick/joystick.h"
+#include "game.h"
+#include "../components/joystick.h"
 
 
 class four_in_a_raw : public game {

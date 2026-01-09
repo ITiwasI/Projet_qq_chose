@@ -5,7 +5,7 @@ class component
 {
   public :
     component();
-    virtual ~component();    
+    ~component();    
 	  virtual void init(void)=0;
 };
 

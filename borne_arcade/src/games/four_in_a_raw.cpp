@@ -1,5 +1,4 @@
 #include "four_in_a_raw.h"
-#include "../../components/joystick/joystick.h"
 
 four_in_a_raw::four_in_a_raw() : game() {
 }

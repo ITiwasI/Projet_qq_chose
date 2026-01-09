@@ -1,8 +1,8 @@
 #ifndef APPLICATION_H_
 #define APPLICATION_H_
 
-#include "components/joystick/joystick.h"
-#include "games/four_in_a_raw/four_in_a_raw.h"
+#include "src/components/joystick.h"
+#include "src/games/four_in_a_raw.h"
 
 
 class application

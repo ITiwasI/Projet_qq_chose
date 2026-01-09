@@ -11,6 +11,7 @@ class button : public component {
   public :
     button();
     ~button();
+    void init() override;
     void init(int p);
     void init(int p, bool pull_up);
     bool read();

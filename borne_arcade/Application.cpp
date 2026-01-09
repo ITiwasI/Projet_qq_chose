@@ -9,9 +9,28 @@ application::~application() {
 
 void application::init(void) {
   Serial.begin(9600);
-  game_four_in_a_raw.init();
+  button_left.init(2);
+  button_right.init(5);
+  button_up.init(6);
+  button_down.init(3);
+  button_select.init(4);
+
 }
 
 void application::run(void) {
-  game_four_in_a_raw.run();
+  if (button_left.isPressed()) {
+    Serial.println("Left button pressed");
+  }
+  if (button_right.isPressed()) {
+    Serial.println("Right button pressed");
+  }
+  if (button_up.isPressed()) {
+    Serial.println("Up button pressed");
+  } 
+  if (button_down.isPressed()) {
+    Serial.println("Down button pressed");
+  }
+  if (button_select.isPressed()) {
+    Serial.println("Select button pressed");
+  }
 }

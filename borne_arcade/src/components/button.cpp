@@ -4,6 +4,12 @@ button::button() : component(), _pin(-1), _pullUp(false) {}
   
 button::~button() {}
 
+void button::init() {
+  // Default initialization (no pin assigned)
+  _pin = 2;
+  _pullUp = false;
+  pinMode(_pin, INPUT);
+}
 void button::init(int p) {
   _pin = p;
   _pullUp = false;

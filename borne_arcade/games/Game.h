@@ -5,7 +5,6 @@ class game
 {
   private :
     static int gameCount;
-    char name[20];
     int id;
   public :
     game();

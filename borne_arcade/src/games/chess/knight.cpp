@@ -1,5 +1,6 @@
 #include "knight.h"
 
+knight::knight() : piece(0, false, 0, 0) {}
 knight::knight(bool wh, uint8_t px, uint8_t py) : piece(2, wh, px, py) {}
 knight::~knight() {}
 

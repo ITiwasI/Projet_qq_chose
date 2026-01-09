@@ -1,5 +1,6 @@
 #include "queen.h"
 
+queen::queen() : piece(0, false, 0, 0) {}
 queen::queen(bool wh, uint8_t px, uint8_t py) : piece(5, wh, px, py) {}
 queen::~queen() {}
 

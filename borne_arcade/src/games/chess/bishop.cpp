@@ -1,5 +1,6 @@
 #include "bishop.h"
 
+bishop::bishop() : piece(0, false, 0, 0) {}
 bishop::bishop(bool wh, uint8_t px, uint8_t py) : piece(3, wh, px, py) {}
 bishop::~bishop() {}
 

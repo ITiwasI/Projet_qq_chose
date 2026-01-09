@@ -6,6 +6,7 @@
 
 class rook : public piece {
   public :
+	rook();
     rook(bool wh, uint8_t px, uint8_t py);
     ~rook();
 

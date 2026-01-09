@@ -6,6 +6,7 @@
 
 class bishop : public piece {
   public :
+	bishop();
     bishop(bool wh, uint8_t px, uint8_t py);
     ~bishop();
 

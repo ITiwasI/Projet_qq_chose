@@ -1,6 +1,6 @@
 #include "pawn.h"
-#include "Arduino.h"
 
+pawn::pawn() : piece(0, false, 0, 0) {}
 pawn::pawn(bool wh, uint8_t px, uint8_t py) : piece(1, wh, px, py) {}
 pawn::~pawn() {}
 

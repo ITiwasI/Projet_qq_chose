@@ -6,6 +6,7 @@
 
 class queen : public piece {
   public :
+	queen();
     queen(bool wh, uint8_t px, uint8_t py);
     ~queen();
 

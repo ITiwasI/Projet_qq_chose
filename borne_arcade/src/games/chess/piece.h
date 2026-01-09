@@ -5,6 +5,7 @@
 
 class piece {
   public :
+	piece();
     piece(uint8_t id, bool wh, uint8_t px, uint8_t py);
     ~piece();
     

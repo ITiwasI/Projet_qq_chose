@@ -6,6 +6,7 @@
 
 class pawn : public piece {
   public :
+	pawn();
     pawn(bool wh, uint8_t px, uint8_t py);
     ~pawn();
 

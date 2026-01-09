@@ -3,6 +3,8 @@
 uint8_t piece::_pieceCount = 0;
 piece* piece::_pieceList[32] = { nullptr };
 
+piece::piece() : _id(0), _white(0), _posX(0), _posY(0) {};
+
 piece::piece(uint8_t id, bool wh, uint8_t px, uint8_t py) : _id(id), _white(wh), _posX(px), _posY(py) {
   if(_pieceCount < 32) _pieceList[_pieceCount] = this;  
   _pieceCount++;

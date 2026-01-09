@@ -1,5 +1,6 @@
 #include "rook.h"
 
+rook::rook() : piece(0, false, 0, 0) {}
 rook::rook(bool wh, uint8_t px, uint8_t py) : piece(4, wh, px, py) {}
 rook::~rook() {}
 

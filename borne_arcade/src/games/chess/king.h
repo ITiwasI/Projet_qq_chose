@@ -6,6 +6,7 @@
 
 class king : public piece {
   public :
+	king();
     king(bool wh, uint8_t px, uint8_t py);
     ~king();
 

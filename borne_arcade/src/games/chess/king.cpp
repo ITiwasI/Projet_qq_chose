@@ -1,5 +1,6 @@
 #include "king.h"
 
+king::king() : piece(0, false, 0, 0) {}
 king::king(bool wh, uint8_t px, uint8_t py) : piece(6, wh, px, py) {}
 king::~king() {}
 

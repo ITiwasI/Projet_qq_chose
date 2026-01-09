@@ -6,6 +6,7 @@
 
 class knight : public piece {
   public :
+	knight();
     knight(bool wh, uint8_t px, uint8_t py);
     ~knight();
 

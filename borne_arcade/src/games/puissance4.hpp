@@ -1,7 +1,8 @@
 #ifndef _puissance4_hpp_
 #define _puissance4_hpp_
 
-#include "button.h"
+#include "game.h"
+#include "../components/button.h"
 
 class puissance4 : public game {
   pulic : 

@@ -26,17 +26,25 @@ void chess::init(void) {
   Serial.println("chess!");
 }
 
-bool chess::isMyTurn() {
-  // If a piece exists at _sel(X,Y), verifies the color match
+bool chess::isMyPiece(uint8_t x, uint8_t y) {
+  // If a piece exists at sel(x,y) , verifies the color match
   bool res = false;
-  if (board[_selY][_selX] != nullptr) {
-    res = (board[_selY][_selX]->isWhite() == _whiteTurn);
+  if (board[y][x] != nullptr) {
+    res = (board[y][x]->isWhite() == _whiteTurn);
   }
   return res;
 }
 
 bool chess::isMoveLegal() {
-  return true;
+  // Picked(x,y) has to be set because _picked==true to call this
+
+  // If back to the same place, don't consider it as a legal move
+  if (_pickedX==_selX && _pickedY==_selY) return false;
+
+  // Pawn 1, Knight 2, Bishop 3, Rook 4, Queen 5, King 6
+  uint8_t pieceID = board[_pickedY][_pickedX]->getId();
+  
+  return board[_pickedY][_pickedX]->canMoveTo(_selX, _selY);
 }
 
 void chess::makeTheMove() {
@@ -47,7 +55,6 @@ void chess::makeTheMove() {
   board[_selY][_selX]=board[_pickedY][_pickedX];
   board[_pickedY][_pickedX]=nullptr;
 }
-
 
 void chess::checkButtons() {
 
@@ -72,11 +79,11 @@ void chess::checkButtons() {
       // If selector roaming on the board, we pick
       // Else => check for legal move, move if true, change turn
 
-      if (isMyTurn() && !_picked) {
+      if (isMyPiece(_selX, _selY) && !_picked) {
         _picked = true;
         _pickedX = _selX;
         _pickedY = _selY;
-      } else if (isMyTurn()) {
+      } else if (isMyPiece(_pickedX, _pickedY) && _picked) {
         _picked = false;
         if (isMoveLegal()) {
           makeTheMove();
@@ -161,7 +168,9 @@ void chess::printBoard(bool showSelector) {
 
 void chess::run(void) {
   //checkSerial(500);
+  checkButtonTimed(500);
   printBoard(true);
+  checkButtonTimed(500);
   //checkSerial(500);
   printBoard(false);
 }

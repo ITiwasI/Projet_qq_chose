@@ -63,7 +63,7 @@ class chess : public game {
     uint8_t _selY = 1;
 
     // Piece selected
-    bool isMyTurn();
+    bool isMyPiece(uint8_t x, uint8_t y);
     bool _picked = false;
     uint8_t _pickedX = 1;
     uint8_t _pickedY = 1;

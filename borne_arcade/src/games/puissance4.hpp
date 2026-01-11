@@ -17,7 +17,6 @@ class puissance4 : public game {
     
     button rightButton;
     button centerButton;
-      
     
   };
 

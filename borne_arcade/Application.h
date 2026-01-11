@@ -27,6 +27,7 @@ class application
     void afficheMenu();
     bool game_running;
     four_in_a_raw game_four_in_a_raw;
+    puissance4 game_puissance4;
     chess game_chess;
 };
 #endif // APPLICATION_H_

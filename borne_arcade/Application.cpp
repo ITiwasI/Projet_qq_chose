@@ -41,6 +41,10 @@ void application::run(void) {
     }
     if (button_select.isPressed() && selected_game == 2) {
       game_running = true;
+      game_puissance4.init();
+    }
+    if (button_select.isPressed() && selected_game == 3) {
+      game_running = true;
       game_chess.init();
     }
     if (button_up.isPressed()) {
@@ -65,6 +69,8 @@ void application::run(void) {
   }else if (selected_game == 1) {
     game_four_in_a_raw.run();
   }else if (selected_game == 2) {
+    game_puissance4.run();
+  }else if (selected_game == 3) {
     game_chess.run();
   }
 }
@@ -72,5 +78,6 @@ void application::run(void) {
 void application::afficheMenu() {
   Serial.println("\nMenu des jeux:");
   Serial.println("1. Puissance 4");
-  Serial.println("2. Echecs");
+  Serial.println("2. Puissance 4 Retro");
+  Serial.println("3. Echecs");
 }

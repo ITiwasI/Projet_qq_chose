@@ -4,12 +4,12 @@ application myApplication;
 
 void setup() 
 {
-  // put your setup code here, to run once:
+  Serial.begin(115200);
+  while (!Serial);
   myApplication.init();
 }
 
 void loop() 
 {
-  // put your main code here, to run repeatedly:
   myApplication.run();
 }

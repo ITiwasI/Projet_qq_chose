@@ -1,5 +1,8 @@
 #include "application.h"
+
+#ifndef Arduino_h
 #include <Arduino.h>
+#endif
 
 application::application(){
 }
@@ -38,7 +41,7 @@ void application::run(void) {
     }
     if (button_select.isPressed() && selected_game == 2) {
       game_running = true;
-      //init echecs
+      game_chess.init();
     }
     if (button_up.isPressed()) {
       selected_game--;
@@ -62,7 +65,7 @@ void application::run(void) {
   }else if (selected_game == 1) {
     game_four_in_a_raw.run();
   }else if (selected_game == 2) {
-    //run echecs
+    game_chess.run();
   }
 }
 

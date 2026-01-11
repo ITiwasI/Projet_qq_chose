@@ -54,6 +54,7 @@ void Grid::AddPiece(char Player, int C)
             return;
         }
     }
+    Serial.println(" ");
     Serial.println("Colonne deja remplie !");
 }
 

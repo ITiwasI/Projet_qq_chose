@@ -14,8 +14,19 @@ class application
 
     void init(void);
     void run(void);
-    
+
+
+    button button_left;
+    button button_right;
+    button button_select;
+    button button_up;
+    button button_down;
+
+    int selected_game;
+    void afficheMenu();
+    bool game_running;
     four_in_a_raw game_four_in_a_raw;
+    //declare echecs game here
 };
 #endif // APPLICATION_H_
 

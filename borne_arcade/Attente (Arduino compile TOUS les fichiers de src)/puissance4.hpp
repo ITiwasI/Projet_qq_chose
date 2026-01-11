@@ -1,14 +1,14 @@
 #ifndef _puissance4_hpp_
 #define _puissance4_hpp_
 
-#include "button.h"
+#include "../components/button.h"
 
 class puissance4 : public game {
-  pulic : 
+  public : 
     puissance4();
     ~puissance4();
 
-    void init(&leftButton, &rightButton, &upButton, &downButton, &centerButton);
+    void init() override;
     void run(void);
     
   private :
@@ -22,4 +22,4 @@ class puissance4 : public game {
     
   };
 
-#endif
+#endif // _puissance4_hpp_

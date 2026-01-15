@@ -1,13 +1,12 @@
-Notes projet
+ALETRUT Thibaut
+GADEFAIT Etienne
+HORION-COUDENE Claire
+4-AE-SE-TP2
+2025-2026
 
--- IDEES
+Rapport BE C++
 
-Bibliothèque de jeux : 
-Le pc n'est qu'un écran
-Des boutons pour interagir (haut bas gauche droite, au moins 2actions)
+Nous avons conçu une "borne arcade" comportant trois jeux : 1 puissance 4, 1 puissance 4 version retro et 1 jeu d'échecs. 
+Pour ce faire, nous avons utilisé une carte ProMicro avec cinq boutons : quatre pour les déplacements sur l'écran et un bouton central pour la sélection. Le Serial Monitor de l'IDE Arduino permet l'affichage du jeu. 
 
-Donc une classe bibliothèque ,
-
-une classe jeux 
-Méthode start()
-close()
+Pour concevoir ce projet, nous avons chacun conçu un jeu selon nos envies, puis nous avons mis en commun le travail et créé l'interface pour la sélection du jeu. Pour démarrer le projet, il est nécessaire de téléverser le code du fichier "borne_arcade.ino" sur la carte. Puis, de sélectionner le jeu souhaité. Une fois le jeu terminé, il est possible de le réinitiliaser en appuyant sur le bouton central. Il y a également la possibilité de revenir au menu principal en appuyant sur les cinq boutons en simultané. 

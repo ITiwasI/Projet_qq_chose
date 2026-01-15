@@ -7,4 +7,4 @@ Le projet principal est donc lancé avec l'IDE Arduino avec le fichier Borne-arc
 
 Nous avons utilisé un joystick pour certains tests. Finalement, nous utilisons une carte Pro Micro avec quatre boutons pour les déplacements et un bouton central de sélection. L'affichage se fait au travers de la connexion Serial avec le pc.
 
-Un diagramme de classe est fournit avec le projet.
+Un diagramme de classe est fourni avec le projet.

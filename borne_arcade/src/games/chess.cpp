@@ -249,6 +249,19 @@ void chess::init(void) {
   leftButton.init(2);
   rightButton.init(5);
   centerButton.init(4);
+  
+  // Chess game reset
+  for (int y=1;y<9;y++) {
+    for (int x=1;x<9;x++) {
+	  _board[y][x] = _boardInit[y][x];
+
+	  if (_board[y][x]!=nullptr) _board[y][x]->setPos(x,y);
+    }
+  }
+  _gameDone = false;
+  _whiteTurn = true;
+  _selX = 1;
+  _selY = 1;
 
   // Suppose the serial has begun
   Serial.println("chess!");

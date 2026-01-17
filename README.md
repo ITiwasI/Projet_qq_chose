@@ -8,5 +8,4 @@ Pour faire fonctionner le projet, il est nécessaire au préalable de téléchar
 
 Nous avons utilisé un joystick pour certains tests. Finalement, nous utilisons une carte Pro Micro avec quatre boutons pour les déplacements et un bouton central de sélection. L'affichage se fait au travers de la connexion Serial avec le pc.
 
-Un diagramme de classe est fourni avec le projet.
-La rapport apporte plus de précsions sur la conception du projet.
+Le rapport apporte plus de précisions sur la conception du projet.

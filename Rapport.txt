@@ -13,7 +13,8 @@ Nous avons conçu une "borne arcade" comportant trois jeux : 1 puissance 4, 1 pu
 
 
 2) Déroulement de la conception
-Pour concevoir ce projet, nous avons chacun conçu un jeu selon nos envies, puis nous avons mis en commun le travail et créé l'interface pour la sélection du jeu, ainsi que la possibilité de retourner au menu principal. 
+Le choix du projet n’est pas évident, puis nous avions découvert que nous avions tous envie de créer un jeu, et donc nous pourrions les rassembler dans une borne d’arcade. Nous avons ensuite réfléchi sur la conception générale du projet, notamment au sujet des classes « application » et « game ». 
+Puis, nous avons chacun conçu un jeu selon nos envies. Et enfin, nous avons mis en commun le travail. Et enfin, nous avons créé l'interface pour la sélection du jeu, ainsi que la possibilité de retourner au menu principal et tester notre borne d’arcade pour s’assurer de son bon fonctionnement. 
 
 
 3) Matériel utilisé
